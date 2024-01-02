@@ -1,0 +1,26 @@
+.flex-display-information {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.flex-display-box {
+    flex: 1;
+    border-radius: 1px;
+    padding: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.input-form {
+    margin-bottom: 90px!important;
+}
+
+.button-information-enregistrer {
+    position: relative;
+    top: 173px;
+}
