@@ -8,8 +8,8 @@ const path = require('path');
 const fs = require('fs');
 const { parse, isWithinInterval } = require('date-fns');
 
-const TWILIO_SID = "AC31b7550fdecf6b39ec4134f7ba223d7e"
-const TWILIO_AUTH_TOEKN = "1743e3b5a2921b290be4e4d44335be79"
+const TWILIO_SID = ""
+const TWILIO_AUTH_TOEKN = ""
 
 const twilio = require('twilio')(TWILIO_SID, TWILIO_AUTH_TOEKN)
 const app = express();
@@ -162,7 +162,6 @@ port.on('readable', function () {
             hr: hr,
             hrv: hrv,
             value: value,
-            // A revoir ce truc dégeux
             date: ('0' + date.getHours()).slice(-2) + ':' + ('0' + (date.getMinutes()+1)).slice(-2)
         };
         jsonData.push(nouvellesDonnees);
@@ -176,11 +175,11 @@ port.on('readable', function () {
         //console.log(informationsJSON)
         //console.log(informationsJSON["bpm"])
 
-        console.log(typeof parseInt(hr))
-        console.log(typeof parseInt(jsonData["bpm"]))
+        console.log(parseInt(hr))
+        console.log(parseInt(jsonData["bpm"]))
         console.log(parseInt(jsonData["bpm"]) > parseInt(hr))
 
-        if(12 < 100){
+        if(hr > parseInt(jsonData["bpm"])){
           //TODO
           console.log("GEUIGLSRGGMBGIRBFGZIBSIYLBCFUMIFBVPQEVFBMIQUEVBMUIQEVBM")
           //sendSMS("Vous avez dépassé le BPM minimum enregistré qui est de " + informationsJSON["bpm"] + ". Veuillez ignorer ce message si vous effectuez un effort physique.", "+33672256315");
